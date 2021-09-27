@@ -1,0 +1,32 @@
+.card-body-top {
+  //background-image: url("../assets/01_Sy_Logo_RGB.png");
+  background-color: #ababab;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  max-height: fit-content;
+}
+
+.btn {
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: aqua;
+
+}
+
+.test {
+  font-size: x-large;
+}
+
+.navbar {
+  width: 100%;
+}
+
+.table {
+  max-height: available;
+  max-width: available;
+}

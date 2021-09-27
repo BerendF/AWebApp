@@ -1,0 +1,17 @@
+table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+
+td,
+th {
+  border: 1px solid;
+}
+thead tr th:nth-child(1) {
+  width: 50%;
+}
+
+thead tr th:nth-child(2) {
+  width: fit-content;
+}

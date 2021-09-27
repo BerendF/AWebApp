@@ -1,0 +1,26 @@
+<div class="card my-5">
+  <div class="card-body table-responsive">
+    <table class="table table-bordered table-striped " matSort (matSortChange)="sortData($event)">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col" mat-sort-header="name">Name</th>
+        <th scope="col">Info</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let wiki of sortedWikis">
+        <td>{{ wiki.name }}</td>
+        <td>
+          <button mat-raised-button color="primary"
+                  matTooltip="{{wiki.link}}"
+                  aria-label="Button that displays a tooltip when focused or hovered over">
+            <a href="{{wiki.link}}" target='_blank'>
+              Go To
+            </a>
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

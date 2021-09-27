@@ -1,0 +1,36 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped table-responsive" matSort (matSortChange)="sortData($event)">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col" mat-sort-header="title">Title</th>
+        <th scope="col" mat-sort-header="rating">Rating</th>
+        <th scope="col">Notes</th>
+        <th scope="col" mat-sort-header="date">Date submitted</th>
+        <th scope="col">Info</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let tutorial of sortedTut">
+        <td>{{ tutorial.id }}</td>
+        <td>{{ tutorial.title }}</td>
+        <td>
+          <ngb-rating [rate]="convertStringToNumber(tutorial.rating)"></ngb-rating>
+        </td>
+        <td>{{tutorial.notes}}</td>
+        <td>{{tutorial.date}}</td>
+        <td>
+          <button mat-raised-button color="primary"
+                  matTooltip="{{tutorial.link}}"
+                  aria-label="Button that displays a tooltip when focused or hovered over">
+            <a href="{{tutorial.link}}" target='_blank'>
+              Go To
+            </a>
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
