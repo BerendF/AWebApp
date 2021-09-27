@@ -4,9 +4,9 @@ import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name="Tutorial")
 public class Tutorial {
 
     @Id
@@ -18,6 +18,7 @@ public class Tutorial {
     private String link;
     @Min(1)
     @Max(5)
+    @NotNull
     private double rating;
     private String notes;
     private String date;

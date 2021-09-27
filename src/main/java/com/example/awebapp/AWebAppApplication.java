@@ -21,9 +21,9 @@ public class AWebAppApplication {
     CommandLineRunner init(TutorialRepository tutorialRepository, WikiRepository wikiRepository) {
         return args -> {
             String date = new Date().toString();
-            DateFormat formatter = new SimpleDateFormat("E MMM dd HH:mm:ss Z yyyy", Locale.US);
-            DateFormat formatter1 = new SimpleDateFormat("dd.MM.yyyy");
-            date = formatter1.format(formatter.parse(date));
+            DateFormat formatterFull = new SimpleDateFormat("E MMM dd HH:mm:ss Z yyyy", Locale.US);
+            DateFormat formatterSimple = new SimpleDateFormat("dd.MM.yyyy");
+            date = formatterSimple.format(formatterFull.parse(date));
             Tutorial[] t = new Tutorial[9];
             t[0] = new Tutorial("Baeldung-WebApp with Spring and Angular", "https://www.baeldung.com/spring-boot-angular-web", 4.0, "base for this page", date);
             t[1] = new Tutorial("Tutorialspoint-SAP Hybris", "https://www.tutorialspoint.com/sap_hybris/index.htm", 2.0, "largely outdated", date);

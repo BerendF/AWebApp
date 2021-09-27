@@ -7,20 +7,20 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:4200")
 public class TutorialController {
 
-    private final TutorialRepository tutorialRepository;
+    private TutorialService tutorialService;
 
-    public TutorialController(TutorialRepository tutorialRepository) {
-        this.tutorialRepository = tutorialRepository;
+    public TutorialController(TutorialService tutorialService) {
+        this.tutorialService = tutorialService;
     }
 
     @GetMapping("/tutorials")
     public List<Tutorial> getAllTutorials() {
-        return (List<Tutorial>) tutorialRepository.findAll();
+        return tutorialService.getAll();
     }
 
     @PostMapping("/tutorials")
-    void addTutorial(@RequestBody Tutorial tutorial) {
+    public void addTutorial(@RequestBody Tutorial tutorial) {
 
-        tutorialRepository.save(tutorial);
+        tutorialService.add(tutorial);
     }
 }

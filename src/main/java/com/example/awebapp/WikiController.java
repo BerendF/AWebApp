@@ -8,20 +8,20 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:4200")
 public class WikiController {
 
-    private final WikiRepository wikiRepository;
+    private WikiService wikiService;
 
-    public WikiController(WikiRepository wikiRepository) {
-        this.wikiRepository = wikiRepository;
+    public WikiController(WikiService wikiService) {
+        this.wikiService = wikiService;
     }
 
 
     @GetMapping("/wikis")
-    public List<Wiki> getAllTutorials() {
-        return (List<Wiki>) wikiRepository.findAll();
+    public List<Wiki> getAllWikis() {
+        return wikiService.getAll();
     }
 
     @PostMapping("/wikis")
-    void addTutorial(@RequestBody Wiki wiki) {
-        wikiRepository.save(wiki);
+    public void addWiki(@RequestBody Wiki wiki) {
+        wikiService.add(wiki);
     }
 }
