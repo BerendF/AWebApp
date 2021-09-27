@@ -42,6 +42,9 @@ public class AWebAppApplication {
             tutorialRepository.findAll().forEach(System.out::println);
             Wiki w = new Wiki("SAP Commerce Wiki","https://help.sap.com/viewer/product/SAP_COMMERCE_CLOUD/SHIP/en-US?task=discover_task");
             wikiRepository.save(w);
+            wikiRepository.findAll().forEach(System.out::println);
+
+
         };
     }
 }

@@ -1,17 +1,18 @@
 package com.example.awebapp;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
+@Table(name="Wiki")
 public class Wiki {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "wiki_generator")
     private int id;
+    @NotEmpty
     private String link;
+    @NotEmpty
     private String name;
 
     public String getName() {
@@ -36,5 +37,14 @@ public class Wiki {
 
     public void setLink(String link) {
         this.link = link;
+    }
+
+    @Override
+    public String toString() {
+        return "Wiki{" +
+                "id=" + id +
+                ", link='" + link + '\'' +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

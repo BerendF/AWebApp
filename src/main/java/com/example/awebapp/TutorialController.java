@@ -20,6 +20,7 @@ public class TutorialController {
 
     @PostMapping("/tutorials")
     void addTutorial(@RequestBody Tutorial tutorial) {
+
         tutorialRepository.save(tutorial);
     }
 }

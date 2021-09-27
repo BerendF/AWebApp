@@ -25,7 +25,9 @@
           </div>
           <div class="form-group">
             <label for="rating">Rating</label>
-            <input type="text" [(ngModel)]="user.rating"
+            <input type="number" [(ngModel)]="user.rating"
+                   inputmode="numeric"
+                   pattern="[1-5]"
                    class="form-control"
                    id="rating"
                    name="Rating"

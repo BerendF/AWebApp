@@ -47,4 +47,8 @@ export class TutorialFormComponent {
   gotoWikiList() {
     this.router.navigate(['/wiki'])
   }
+  number(rating: any){
+    return Number(rating)
+  }
+
 }

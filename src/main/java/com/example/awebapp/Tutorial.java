@@ -1,18 +1,23 @@
 package com.example.awebapp;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
+@Table(name="Tutorial")
 public class Tutorial {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "tutorial_generator")
     private int id;
+    @NotEmpty
     private String title;
+    @NotEmpty
     private String link;
+    @Min(1)
+    @Max(5)
     private double rating;
     private String notes;
     private String date;
