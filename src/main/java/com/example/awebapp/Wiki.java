@@ -4,7 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 
 @Entity
-@Table(name="Wiki")
+@Table(name = "Wiki")
 public class Wiki {
 
     @Id
@@ -29,7 +29,8 @@ public class Wiki {
         this.link = link;
     }
 
-    public Wiki() {}
+    public Wiki() {
+    }
 
     public String getLink() {
         return link;
