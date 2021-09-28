@@ -33,11 +33,10 @@ export class WikisComponent implements OnInit {
 
     this.sortedWikis = data.sort((a, b) => {
       const isAsc = sort.direction === 'asc';
-      switch (sort.active) {
-        case 'name':
-          return this.compare(a.name, b.name, isAsc);
-        default:
-          return 0;
+      if (sort.active == 'name') {
+        return this.compare(a.name, b.name, isAsc);
+      } else {
+        return 0;
       }
     });
   }

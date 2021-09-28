@@ -1,6 +1,7 @@
 <div class="card my-5">
   <div class="card-body table-responsive">
     <table class="table table-bordered table-striped " matSort (matSortChange)="sortData($event)">
+      <caption [hidden]="true">Wikis</caption>
       <thead class="thead-dark">
       <tr>
         <th scope="col" mat-sort-header="name">Name</th>

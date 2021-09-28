@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Bean;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Locale;
 
@@ -34,15 +35,10 @@ public class AWebAppApplication {
             t[6] = new Tutorial("Spartacus Visualization", "https://microlearning.opensap.com/playlist/dedicated/178318381/1_sokuy66v/1_8mmwx8ck", 1.0, "not for developers", date);
             t[7] = new Tutorial("SAP Commerce Visualization", "https://microlearning.opensap.com/playlist/dedicated/178317751/1_4ugj2pn9/1_zsyss1nz", 1.0, "not for developers", date);
             t[8] = new Tutorial("CronJobs", "http://javainsimpleway.com/cron-jobs-overview/", 3.0, "simple", date);
+            Wiki w = new Wiki("SAP Commerce Wiki", "https://help.sap.com/viewer/product/SAP_COMMERCE_CLOUD/SHIP/en-US?task=discover_task");
 
-
-            for (int i = 0; i < t.length; i++) {
-                tutorialRepository.save(t[i]);
-            }
-            tutorialRepository.findAll().forEach(System.out::println);
-            Wiki w = new Wiki("SAP Commerce Wiki","https://help.sap.com/viewer/product/SAP_COMMERCE_CLOUD/SHIP/en-US?task=discover_task");
+            tutorialRepository.saveAll(Arrays.asList(t));
             wikiRepository.save(w);
-            wikiRepository.findAll().forEach(System.out::println);
 
 
         };
